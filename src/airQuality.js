@@ -2,21 +2,6 @@ import { stationList } from "./stationList.js";
 
 const apiKey = import.meta.env.VITE_AIRKOREA_API_KEY;
 
-navigator.geolocation.getCurrentPosition(success, error);
-
-function success(position) {
-  const userLat = position.coords.latitude;
-  const userLon = position.coords.longitude;
-  console.log("사용자 위치:", userLat, userLon);
-  findNearestStation(userLat, userLon);
-}
-
-function error() {
-  console.error("위치 정보를 불러오지 못했습니다.");
-}
-// API 요청 (실시간 미세먼지 정보)
-
-// 위도와 경도로 두 지점 사이의 거리 계산
 function getDistance(lat1, lon1, lat2, lon2) {
   const R = 6371; // km
   const dLat = ((lat2 - lat1) * Math.PI) / 180;
@@ -32,7 +17,7 @@ function getDistance(lat1, lon1, lat2, lon2) {
 }
 
 // 측정소 리스트에서 가장 가까운 측정소 찾기
-function findNearestStation(userLat, userLon) {
+export function findNearestStation(userLat, userLon) {
   let nearestStation = stationList[0];
   let minDistance = getDistance(
     userLat,
