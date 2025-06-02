@@ -1,0 +1,313 @@
+html,
+body {
+  min-height: 100vh;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Gowun Dodum", sans-serif;
+  background: linear-gradient(to bottom, #a2d5f2, #ffffff);
+  color: #000;
+  text-align: center;
+  padding: 40px 20px;
+  height: 100%;
+}
+
+.time {
+  font-size: 120px;
+  font-weight: bold;
+}
+
+.location {
+  font-size: 80px;
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  height: auto;
+}
+
+.icon-temp {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.icon-temp img {
+  width: 250px;
+}
+
+.temperature {
+  font-size: 96px;
+  font-weight: bold;
+}
+.weather-desc {
+  font-size: 35px;
+  font-weight: bold;
+}
+.humidity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 0px auto;
+}
+
+.humidity-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.humidity img {
+  width: 75px;
+}
+
+.humidity-label {
+  font-size: 20px;
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+.humidity-value {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.dust-box {
+  flex-direction: column; /* 수직 정렬 */
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 70%;
+  margin: 0px auto;
+}
+.dust-type {
+  display: none;
+}
+.dust-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.dust-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dust-left img {
+  width: 100px;
+}
+
+.dust-label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dust-right {
+  position: relative;
+
+  width: 100%;
+  max-width: 300px;
+}
+
+.pm-bar {
+  display: flex;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.pm-labels {
+  position: relative;
+  height: 20px; /* 라벨 높이 여유 */
+}
+.pm10-labels span,
+.pm2_5-labels span {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 140%;
+}
+/* PM10 4개 구간 기준 중앙 위치 비율 */
+.pm10-labels span:nth-child(1) {
+  left: 0%;
+}
+.pm10-labels span:nth-child(2) {
+  left: 16.7%; /* step1 끝 */
+}
+.pm10-labels span:nth-child(3) {
+  left: 44.5%; /* step1+step2 끝 */
+}
+.pm10-labels span:nth-child(4) {
+  left: 83.4%; /* step1+2+3 끝 */
+}
+/* PM2.5 비율 기반 수치 배치 */
+.pm2_5-labels span:nth-child(1) {
+  left: 0%;
+}
+.pm2_5-labels span:nth-child(2) {
+  left: 15%;
+}
+.pm2_5-labels span:nth-child(3) {
+  left: 35%;
+}
+.pm2_5-labels span:nth-child(4) {
+  left: 75%;
+}
+
+.step {
+  height: 100%;
+}
+
+.pm10-step1 {
+  width: 16.7%;
+  background: #2196f3;
+}
+.pm10-step2 {
+  width: 27.8%;
+  background: #4caf50;
+}
+.pm10-step3 {
+  width: 38.9%;
+  background: #ffeb3b;
+}
+.pm10-step4 {
+  width: 16.7%;
+  background: #f44336;
+}
+
+.pm2_5-step1 {
+  width: 15%;
+  background: #2196f3;
+}
+.pm2_5-step2 {
+  width: 20%;
+  background: #4caf50;
+}
+.pm2_5-step3 {
+  width: 40%;
+  background: #ffeb3b;
+}
+.pm2_5-step4 {
+  width: 25%;
+  background: #f44336;
+}
+
+.arrow {
+  position: absolute;
+  top: -10px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid #1d3557;
+
+  transform: translateX(-50%);
+  transition: left 0.3s ease;
+}
+
+.pm-value {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 10px;
+}
+#pm-value-unit {
+  font-size: 15px;
+}
+.station-info {
+  margin: 20px;
+  color: gray;
+}
+.info-button {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: #2196f3;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 40px;
+  margin: 0px auto 0;
+}
+@media (max-width: 768px) {
+  .time {
+    font-size: 48px;
+  }
+
+  .location {
+    font-size: 28px;
+  }
+
+  .weather img {
+    width: 150px;
+  }
+  .weather-desc {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .temperature {
+    font-size: 48px;
+  }
+
+  .humidity img {
+    width: 60px;
+  }
+
+  .humidity-label {
+    font-size: 16px;
+  }
+
+  .humidity-value {
+    font-size: 24px;
+  }
+  .dust-type {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .dust-box {
+    margin-top: 20px;
+  }
+
+  .dust-left {
+    display: none;
+  }
+  .dust-left img {
+    width: 60px;
+  }
+
+  .dust-label {
+    font-size: 16px;
+  }
+
+  .dust-right {
+    width: 100; /* PC보다 살짝 줄임 */
+  }
+
+  .pm-value {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  #pm-value-unit {
+    font-size: 12px;
+  }
+
+  .info-button {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
