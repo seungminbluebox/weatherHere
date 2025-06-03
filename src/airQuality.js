@@ -34,13 +34,13 @@ export function findNearestStation(userLat, userLon) {
       nearestStation = station;
     }
   }
-  console.log(
-    "가장 가까운 측정소:",
-    nearestStation.name,
-    "거리:",
-    minDistance.toFixed(2),
-    "km"
-  );
+  // console.log(
+  //   "가장 가까운 측정소:",
+  //   nearestStation.name,
+  //   "거리:",
+  //   minDistance.toFixed(2),
+  //   "km"
+  // );
   fetchStationData(nearestStation.name, minDistance.toFixed(2));
 }
 
@@ -56,7 +56,6 @@ function fetchStationData(stationName, distance) {
         console.error("측정소 데이터를 찾을 수 없습니다.");
         return;
       }
-      console.log("측정소 데이터:", items);
       const item = items[0];
       const pm10 = Number(item.pm10Value);
       const pm25 = Number(item.pm25Value);
