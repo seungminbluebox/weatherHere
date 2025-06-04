@@ -12,7 +12,6 @@
     <script type="module" src="./src/script.js"></script>
   </head>
   <body>
-    <div class="time"></div>
     <div class="location"></div>
 
     <div class="weather">
@@ -20,7 +19,7 @@
         <img alt="날씨 아이콘" />
         <div class="temperature"></div>
       </div>
-      <div class="weather-desc">흐림</div>
+      <div class="weather-desc"></div>
     </div>
 
     <div class="humidity">
@@ -78,11 +77,22 @@
         </div>
       </div>
     </div>
+    <div class="UVBox">
+      <div class="UV">
+        <div class="UV-left">
+          <img src="./image/uv.png" alt="UV 아이콘" />
+          <div class="UV-label">자외선</div>
+        </div>
+        <div class="UV-value"></div>
+      </div>
+      <div class="UVMaxDesc"></div>
+    </div>
     <div class="station-info">
       <span id="far-from-station"></span>
       <br />
       <span id="station-name"></span>
     </div>
+
     <div class="info-button">i</div>
   </body>
 </html>

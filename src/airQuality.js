@@ -77,7 +77,7 @@ function updateUI(pm10, pm25, locationName, distance) {
   pm10El.innerHTML = `${pm10}<span id="pm-value-unit">μg/m³</span>`;
   pm25El.innerHTML = `${pm25}<span id="pm-value-unit">μg/m³</span>`;
 
-  distanceEl.innerHTML = `가장 가까운 측정소까지 ${distance}km`;
+  distanceEl.innerHTML = `가장 가까운  미세먼지 측정소까지 ${distance}km`;
   locationEl.innerHTML = `(${locationName})`;
 
   pm10El.style.color = getColorByPM10(pm10);
@@ -86,24 +86,21 @@ function updateUI(pm10, pm25, locationName, distance) {
   const arrow10 = document.querySelectorAll(".arrow")[0];
   const arrow25 = document.querySelectorAll(".arrow")[1];
 
-  moveArrowToPM(arrow10, pm10, 0, 150); // PM10 최대 기준
+  moveArrowToPM(arrow10, pm10, 0, 180); // PM10 최대 기준
   if (pm25 !== null) {
-    moveArrowToPM(arrow25, pm25, 0, 75); // PM2.5 최대 기준
+    moveArrowToPM(arrow25, pm25, 0, 100); // PM2.5 최대 기준
   } else {
     arrow25.style.left = "-1000px"; // 숨김
   }
 }
 
 function moveArrowToPM(arrowElement, value, min, max) {
-  const bar = arrowElement.nextElementSibling; // .pm-bar
-  const barWidth = bar.getBoundingClientRect().width;
-
   const clamped = Math.max(min, Math.min(value, max));
   const ratio = (clamped - min) / (max - min);
-  const px = ratio * barWidth;
+  const percent = ratio * 100;
 
+  arrowElement.style.left = `${percent}%`; // px → %로 변경
   arrowElement.style.position = "absolute";
-  arrowElement.style.left = `${px}px`;
 }
 
 function getColorByPM10(pm) {

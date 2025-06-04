@@ -1,12 +1,10 @@
 import { findNearestStation } from "./airQuality.js";
-import { setTheTime } from "./time.js";
 import { getKoreanLocationName } from "./locationName.js";
 import { getWeatherInfo } from "./weatherInfo.js";
-
+import { getUV } from "./getUV.js";
+import { updateLocationName } from "./location.js";
+import { updateWeatherInfo } from "./updateWeatherInfo.js";
 navigator.geolocation.getCurrentPosition(success, error);
-
-setTheTime();
-setInterval(setTheTime, 1000);
 
 async function success(position) {
   const userLat = position.coords.latitude;
@@ -15,10 +13,11 @@ async function success(position) {
 
   const locationName = await getKoreanLocationName(userLat, userLon);
   const weather = await getWeatherInfo(userLat, userLon);
-  console.log("위치 이름:", locationName);
-  console.log("날씨 정보:", weather);
 
+  updateLocationName(locationName);
+  updateWeatherInfo(weather);
   findNearestStation(userLat, userLon);
+  getUV(userLat, userLon);
 }
 
 function error() {
