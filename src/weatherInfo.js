@@ -5,8 +5,10 @@ export async function getWeatherInfo(lat, lon) {
   const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=kr&appid=${key}`;
   const weatherRes = await fetch(weatherUrl);
   const weatherData = await weatherRes.json();
-
+  console.log("날씨 정보:", weatherData);
   return {
+    sunrise: weatherData.sys.sunrise,
+    sunset: weatherData.sys.sunset,
     temp: weatherData.main.temp,
     humidity: weatherData.main.humidity,
     condition: weatherData.weather?.[0]?.description,

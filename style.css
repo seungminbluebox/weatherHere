@@ -1,3 +1,10 @@
+:root {
+  --color-blue: #2196f3;
+  --color-green: #4caf50;
+  --color-yellow: #ffd000;
+  --color-red: #f44336;
+  --color-black: #8b0000;
+}
 html,
 body {
   min-height: 100%;
@@ -5,7 +12,8 @@ body {
 body {
   margin: 0;
   font-family: "Gowun Dodum", sans-serif;
-  background: linear-gradient(to bottom, #a2d5f2, #ffffff);
+  background: var(--bg-gradient);
+  transition: background 1s ease;
   color: #000;
   text-align: center;
   padding: 20px;
@@ -19,6 +27,7 @@ body {
 
 .location {
   font-size: 50px;
+  color: var(--font-color);
 }
 
 .weather {
@@ -41,10 +50,12 @@ body {
 .temperature {
   font-size: 75px;
   font-weight: bold;
+  color: var(--font-color);
 }
 .weather-desc {
   font-size: 35px;
   font-weight: bold;
+  color: var(--font-color);
 }
 .humidity {
   display: flex;
@@ -68,11 +79,13 @@ body {
   font-size: 20px;
   margin-top: 4px;
   font-weight: bold;
+  color: var(--font-color);
 }
 
 .humidity-value {
   font-size: 35px;
   font-weight: bold;
+  color: var(--font-color);
 }
 
 .dust-box {
@@ -104,6 +117,8 @@ body {
 }
 
 .dust-label {
+  color: var(--font-color);
+
   font-size: 20px;
   font-weight: bold;
 }
@@ -129,6 +144,8 @@ body {
 }
 .pm10-labels span,
 .pm2_5-labels span {
+  color: var(--font-color);
+
   position: absolute;
   top: 0;
   transform: translateX(-50%);
@@ -176,7 +193,7 @@ body {
 }
 .pm10-step3 {
   width: 38.9%;
-  background: #ffeb3b;
+  background: #ffd000;
 }
 .pm10-step4 {
   width: 16.7%;
@@ -193,7 +210,7 @@ body {
 }
 .pm2_5-step3 {
   width: 40%;
-  background: #ffeb3b;
+  background: #ffd000;
 }
 .pm2_5-step4 {
   width: 25%;
@@ -216,7 +233,8 @@ body {
   text-align: center;
   font-weight: bold;
   font-size: 30px;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 #pm-value-unit {
   font-size: 15px;
@@ -225,18 +243,7 @@ body {
   margin: 20px;
   color: gray;
 }
-.info-button {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  background: #2196f3;
-  border-radius: 50%;
-  color: white;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 40px;
-  margin: 0px auto 0;
-}
+
 .UV {
   display: flex;
   align-items: center;
@@ -256,6 +263,8 @@ body {
 }
 
 .UV-label {
+  color: var(--font-color);
+
   font-size: 20px;
   margin-top: 4px;
   font-weight: bold;
@@ -264,6 +273,74 @@ body {
 .UV-value {
   font-size: 35px;
   font-weight: bold;
+}
+.UVMaxDesc {
+  color: var(--font-color);
+}
+
+.info-button {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: #2196f3;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 40px;
+  margin: 0px auto 0;
+}
+.infoTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.tooltip-box {
+  color: var(--font-color);
+  display: none;
+  position: absolute;
+  background: var(--tooltip-bg);
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+  white-space: pre-line;
+}
+.tooltip-table {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.tooltip-col {
+  min-width: 110px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.tooltip-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: var(--font-color);
+}
+.first {
+  color: var(--color-blue);
+}
+.second {
+  color: var(--color-green);
+}
+.third {
+  color: var(--color-yellow);
+}
+.fourth {
+  color: var(--color-red);
+}
+.fifth {
+  color: var(--color-black);
 }
 
 @media (max-width: 768px) {
@@ -285,23 +362,12 @@ body {
   .temperature {
     font-size: 48px;
   }
-
-  .humidity img {
-    width: 60px;
-  }
-
-  .humidity-label {
-    font-size: 16px;
-  }
-
-  .humidity-value {
-    font-size: 24px;
-  }
   .dust-type {
     display: block;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 5px;
+    color: var(--font-color);
   }
   .dust-box {
     margin-top: 20px;
@@ -336,5 +402,33 @@ body {
     height: 32px;
     font-size: 18px;
     line-height: 32px;
+  }
+  .info-button {
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+    line-height: 28px;
+  }
+  .infoTitle {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .tooltip-box {
+    font-size: 10px;
+    padding: 6px 8px;
+    width: 320px;
+    border-radius: 4px;
+    transform: translate(-50%, -90%) !important;
+  }
+  .tooltip-table {
+    gap: 8px;
+  }
+  .tooltip-col {
+    min-width: 80px;
+    font-size: 10px;
+  }
+  .tooltip-title {
+    font-size: 12px;
+    margin-bottom: 2px;
   }
 }

@@ -47,7 +47,7 @@ function UVValueColor(uv) {
   } else if (3 <= uv && uv < 6) {
     return "#4caf50"; // 초록색
   } else if (6 <= uv && uv < 8) {
-    return "#ffeb3b"; // 노란색
+    return "#ffd000"; // 노란색
   } else if (8 <= uv && uv < 10) {
     return "#f44336"; // 빨간색
   } else {

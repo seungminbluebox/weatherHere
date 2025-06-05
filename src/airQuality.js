@@ -106,12 +106,12 @@ function moveArrowToPM(arrowElement, value, min, max) {
 function getColorByPM10(pm) {
   if (pm <= 30) return "#2196f3";
   if (pm <= 80) return "#4caf50";
-  if (pm <= 150) return "#ffeb3b";
+  if (pm <= 150) return "#ffd000";
   return "#f44336";
 }
 function getColorByPM25(pm) {
   if (pm <= 15) return "#2196f3";
   if (pm <= 35) return "#4caf50";
-  if (pm <= 75) return "#ffeb3b";
+  if (pm <= 75) return "#ffd000";
   return "#f44336";
 }
