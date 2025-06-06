@@ -46,7 +46,7 @@ export function findNearestStation(userLat, userLon) {
 
 // 측정소 이름으로 실시간 미세먼지 데이터 요청
 function fetchStationData(stationName, distance) {
-  const url = `http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?stationName=${stationName}&dataTerm=month&pageNo=1&numOfRows=100&returnType=json&serviceKey=${apiKey}&ver=1.5`;
+  const url = `https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?stationName=${stationName}&dataTerm=month&pageNo=1&numOfRows=100&returnType=json&serviceKey=${apiKey}&ver=1.5`;
 
   fetch(url)
     .then((res) => res.json())
