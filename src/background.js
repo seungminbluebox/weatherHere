@@ -28,6 +28,7 @@ export function applyBackgroundTheme(sunsetUnix, sunriseUnix) {
     );
     root.style.setProperty("--font-color", "black");
     root.style.setProperty("--tooltip-bg", "rgba(255, 255, 255, 0.95)	");
+    root.style.setProperty("--arrow-color", "10px solid #1d3557");
   } else {
     // 🌙 밤 테마
     root.style.setProperty(
@@ -36,5 +37,6 @@ export function applyBackgroundTheme(sunsetUnix, sunriseUnix) {
     );
     root.style.setProperty("--font-color", "#d0ccff");
     root.style.setProperty("--tooltip-bg", "rgba(50, 50, 70, 0.95)	");
+    root.style.setProperty("--arrow-color", "10px solid #d0ccff");
   }
 }

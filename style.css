@@ -20,6 +20,17 @@ body {
   height: 100%;
 }
 
+#loading-screen {
+  text-align: center;
+  padding: 1rem;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  color: rgb(51, 50, 50);
+}
+
 .time {
   font-size: 40px;
   font-weight: bold;
@@ -223,7 +234,7 @@ body {
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 10px solid #1d3557;
+  border-top: var(--arrow-color);
 
   transform: translateX(-50%);
   transition: left 0.3s ease;

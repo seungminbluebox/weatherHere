@@ -14,87 +14,92 @@
     <script type="module" src="./src/script.js"></script>
   </head>
   <body>
-    <div class="location"></div>
+    <div id="loading-screen">🔄 데이터를 불러오는 중입니다...</div>
+    <div id="app-content" style="display: none">
+      <div id="app">
+        <div class="location"></div>
 
-    <div class="weather">
-      <div class="icon-temp">
-        <img alt="날씨 아이콘" />
-        <div class="temperature"></div>
-      </div>
-      <div class="weather-desc"></div>
-    </div>
-
-    <div class="humidity">
-      <div class="humidity-left">
-        <img src="./image/humi.png" alt="습도 아이콘" />
-        <div class="humidity-label">습도</div>
-      </div>
-      <div class="humidity-value"></div>
-    </div>
-
-    <div class="dust-box">
-      <div class="dust-type">미세먼지</div>
-
-      <div class="dust-content">
-        <div class="dust-left">
-          <img src="./image/pm10.png" alt="PM10 아이콘" />
-          <div class="dust-label">미세먼지</div>
-        </div>
-
-        <div class="dust-right">
-          <div class="arrow"></div>
-          <div class="pm-bar">
-            <div class="step pm10-step1"></div>
-            <div class="step pm10-step2"></div>
-            <div class="step pm10-step3"></div>
-            <div class="step pm10-step4"></div>
+        <div class="weather">
+          <div class="icon-temp">
+            <img alt="날씨 아이콘" />
+            <div class="temperature"></div>
           </div>
-          <div class="pm-labels pm10-labels">
-            <span>0</span><span>30</span><span>80</span><span>150</span>
-          </div>
-          <div class="pm-value"><span id="pm-value-unit"></span></div>
+          <div class="weather-desc"></div>
         </div>
-      </div>
-    </div>
 
-    <div class="dust-box">
-      <div class="dust-type">초미세먼지</div>
-      <div class="dust-content">
-        <div class="dust-left">
-          <img src="./image/pm2.5.png" alt="PM2.5 아이콘" />
-          <div class="dust-label">초미세먼지</div>
-        </div>
-        <div class="dust-right">
-          <div class="arrow"></div>
-          <div class="pm-bar">
-            <div class="step pm2_5-step1"></div>
-            <div class="step pm2_5-step2"></div>
-            <div class="step pm2_5-step3"></div>
-            <div class="step pm2_5-step4"></div>
+        <div class="humidity">
+          <div class="humidity-left">
+            <img src="./image/humi.png" alt="습도 아이콘" />
+            <div class="humidity-label">습도</div>
           </div>
-          <div class="pm-labels pm2_5-labels">
-            <span>0</span><span>15</span><span>35</span><span>75</span>
-          </div>
-          <div class="pm-value"><span id="pm-value-unit"></span></div>
+          <div class="humidity-value"></div>
         </div>
-      </div>
-    </div>
-    <div class="UVBox">
-      <div class="UV">
-        <div class="UV-left">
-          <img src="./image/uv.png" alt="UV 아이콘" />
-          <div class="UV-label">자외선</div>
-        </div>
-        <div class="UV-value"></div>
-      </div>
-      <div class="UVMaxDesc"></div>
-    </div>
-    <div class="station-info">
-      <span id="far-from-station"></span>
-      <br />
-      <span id="station-name"></span>
-    </div>
 
-    <div class="info-button">i</div>
+        <div class="dust-box">
+          <div class="dust-type">미세먼지</div>
+
+          <div class="dust-content">
+            <div class="dust-left">
+              <img src="./image/pm10.png" alt="PM10 아이콘" />
+              <div class="dust-label">미세먼지</div>
+            </div>
+
+            <div class="dust-right">
+              <div class="arrow"></div>
+              <div class="pm-bar">
+                <div class="step pm10-step1"></div>
+                <div class="step pm10-step2"></div>
+                <div class="step pm10-step3"></div>
+                <div class="step pm10-step4"></div>
+              </div>
+              <div class="pm-labels pm10-labels">
+                <span>0</span><span>30</span><span>80</span><span>150</span>
+              </div>
+              <div class="pm-value"><span id="pm-value-unit"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dust-box">
+          <div class="dust-type">초미세먼지</div>
+          <div class="dust-content">
+            <div class="dust-left">
+              <img src="./image/pm2.5.png" alt="PM2.5 아이콘" />
+              <div class="dust-label">초미세먼지</div>
+            </div>
+            <div class="dust-right">
+              <div class="arrow"></div>
+              <div class="pm-bar">
+                <div class="step pm2_5-step1"></div>
+                <div class="step pm2_5-step2"></div>
+                <div class="step pm2_5-step3"></div>
+                <div class="step pm2_5-step4"></div>
+              </div>
+              <div class="pm-labels pm2_5-labels">
+                <span>0</span><span>15</span><span>35</span><span>75</span>
+              </div>
+              <div class="pm-value"><span id="pm-value-unit"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="UVBox">
+          <div class="UV">
+            <div class="UV-left">
+              <img src="./image/uv.png" alt="UV 아이콘" />
+              <div class="UV-label">자외선</div>
+            </div>
+            <div class="UV-value"></div>
+          </div>
+          <div class="UVMaxDesc"></div>
+        </div>
+        <div class="station-info">
+          <span id="far-from-station"></span>
+          <br />
+          <span id="station-name"></span>
+        </div>
+
+        <div class="info-button">i</div>
+      </div>
+    </div>
   </body>
 </html>
