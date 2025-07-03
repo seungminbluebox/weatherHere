@@ -98,7 +98,49 @@ body {
   font-weight: bold;
   color: var(--font-color);
 }
+/* style.css */
 
+.humidity {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 내부 요소들을 중앙 정렬 */
+  gap: 30px; /* 습도와 불쾌지수 사이 간격 */
+  margin: 20px auto;
+}
+.humidity-left,
+.discomfort-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.humidity img,
+.discomfort img {
+  width: 75px;
+}
+
+.humidity-label,
+.discomfort-label {
+  font-size: 20px;
+  margin-top: 4px;
+  font-weight: bold;
+  color: var(--font-color);
+}
+
+.humidity-value,
+.discomfort-value {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* 불쾌지수 값에 따라 색상을 변경할 클래스 추가 */
+.discomfort-low {
+  color: #2196f3; /* 70 미만일 때 (푸른색) */
+}
+
+.discomfort-high {
+  color: #ffd000; /* 70 이상일 때 (노란색 계열) */
+}
 .dust-box {
   flex-direction: column; /* 수직 정렬 */
   align-items: center;
